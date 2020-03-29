@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "d33c97ae-06c4-412f-87c5-451b762bf24d",
+		"name": "RBAC localhost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:58030/login/application",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Data\" : \n\t{\n\t\t\"ClientId\": \"1234\",\n\t\t\"ClientSecret\": \"123456\",\n\t\t\"ExpiresInSeconds\": 120,\n\t\t\"IsAutoRefresh\": false\t\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:58030/login/application",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "58030",
+					"path": [
+						"login",
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:58030/roles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "cc881e2c-39c8-49c1-b6a0-9c6a73f12368",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:58030/roles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "58030",
+					"path": [
+						"roles"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
